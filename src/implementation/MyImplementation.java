@@ -15,8 +15,8 @@ public class MyImplementation {
     public static void main(String[] args) {
         int maxSizeOfStack = 10;
         MyStack  stack = new MyStack(maxSizeOfStack);
-        int element = stack.peek();
-        element = stack.pop();
+        int element = stack.peek();//Causing UnderFlow
+        element = stack.pop();//Causing UnderFlow
 
         boolean check = stack.isEmpty();
 
@@ -24,9 +24,14 @@ public class MyImplementation {
 
         stack.push(200);
         System.out.println("size of stack =" + stack.size());
-        for (int i = 0; i < 100 ; i++) {
+        for (int i = 0; i < 9 ; i++) {
             stack.push(new Random().nextInt(100));
         }
         System.out.println("size of stack =" + stack.size());
+
+
+        for (int i = 0; i <maxSizeOfStack; i++) {
+            System.out.println(stack.pop());
+        }
     }
 }
